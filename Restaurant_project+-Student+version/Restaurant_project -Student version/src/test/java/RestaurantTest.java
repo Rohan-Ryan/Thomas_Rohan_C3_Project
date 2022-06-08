@@ -34,12 +34,40 @@ class RestaurantTest {
         assertFalse(A1.isRestaurantOpen());
 
     }
+    // The amount of selected items from the menu should give the total payable amount.
+    // Two items to be added and checked
+    // scenario1 2 item bought
+    // scenario2 1 items bought
+    // None bought
+
     @Test
     public void totalAmount_gives_the_Amount_Totaled_2(){
         A1.addToMenu("Gratin",520);
         A1.addToMenu("Spaghetti Bolognese",800);
         ArrayList<String> order=new ArrayList<>(Arrays.asList("Gratin","Spaghetti Bolognese"));
-        assertEquals(A1.totalAmount(order),520+800); }
+        assertEquals(A1.totalAmount(order),520+800);
+    }
+    @Test
+    public void totalAmount_gives_the_Amount_Totaled_1(){
+        A1.addToMenu("Gratin",520);
+        A1.addToMenu("Spaghetti Bolognese",800);
+        ArrayList<String> order=new ArrayList<>(Arrays.asList("Gratin"));
+        assertEquals(A1.totalAmount(order),520);
+    }
+    @Test
+    public void totalAmount_gives_the_Amount_Totaled_0(){
+        A1.addToMenu("Gratin",520);
+        A1.addToMenu("Spaghetti Bolognese",800);
+        ArrayList<String> order=new ArrayList<>(Arrays.asList());
+        assertEquals(A1.totalAmount(order),0);
+    }
+    //@Test
+    //public void totalAmount_gives_the_gives_more_or_less_than_actual(){
+        //A1.addToMenu("Gratin",520);
+        //A1.addToMenu("Spaghetti Bolognese",800);
+        //ArrayList<String> order=new ArrayList<>(Arrays.asList("Gratin","Spaghetti Bolognese"));
+        //assertTrue(A1.totalAmount(order)==520+800);}
+
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
