@@ -34,6 +34,12 @@ class RestaurantTest {
         assertFalse(A1.isRestaurantOpen());
 
     }
+    @Test
+    public void totalAmount_gives_the_Amount_Totaled_2(){
+        A1.addToMenu("Gratin",520);
+        A1.addToMenu("Spaghetti Bolognese",800);
+        ArrayList<String> order=new ArrayList<>(Arrays.asList("Gratin","Spaghetti Bolognese"));
+        assertEquals(A1.totalAmount(order),520+800); }
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

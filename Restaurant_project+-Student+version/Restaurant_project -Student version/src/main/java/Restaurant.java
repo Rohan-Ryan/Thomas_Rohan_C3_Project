@@ -22,6 +22,10 @@ public class Restaurant {
             return true;       }
         else { return false;}
     }
+    //itemNotFound Exception can't be raised as user choose items from the menu as shown in the UI snapshots
+    //Also it is written in:- A few pointers that may be of use: (3rd point)
+    //The name of the item returned when the user selects the item is always in the menu, hence a fail case scenario/Exception scenario would be unnecessary.
+    public int totalAmount(ArrayList<String> items){return 0;}
 
     public LocalTime getCurrentTime(){ return  LocalTime.now(); }
 
